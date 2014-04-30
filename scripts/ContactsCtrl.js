@@ -1,0 +1,4 @@
+function ContactsCtrl($scope,$http) 
+{
+	
+}

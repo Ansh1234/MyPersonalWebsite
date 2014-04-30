@@ -1,0 +1,43 @@
+<div>
+<h3>Sencha Touch: Developing your First Application</h3>
+<h4>Introduction</h4>
+<p>As more and more applications are deployed on mobiles and tablets these days, it becomes difficult for the developers to develop mobile applications  for each platform seperately. Here comes Sencha Touch. Sencha Touch is a JavaScript framework for building cross platform applications.</p>
+
+<p>When I had the task of building a Sencha Touch application and deploy it to an Android Device,  I went through many tutorials but none of them provided proper documentation from the start till the very end. So here I come, with a  detailed tutorial on how to develop  a Simple Hello Word Application in Sencha Touch and deploy it to Android Device. The other platforms like ios and windows will be covered in later tutorials.</p>
+
+<p>You can download Sencha Complete from the following link. Sencha Complete  includes many useful components like Sencha Architect, Sencha Touch, Sencha Eclipse Plugin etc. But it only comes for 30 days free trial. After that you need to purchase the product. As most of you simply want to run some simple application so it would be better for you to download its important components seperately.
+</p>
+
+<h3>Installing Important Components</h3>
+<p>Download Sencha CMD : Sencha CMD is a tool which is used to provide structure to your application. You can download Sencha Touch from the following link. After extracting and running the file Sencha CMD will be installed on your system. Export Sencha Cmd in your path variable. Once this is installed you will be able to run 'sencha' command anywhere from your terminal.</p>
+<p>Now install Sencha Touch. You can download Sencha Touch from the following tutorial. At the time of writing the tutorial, I downloaded sencha touch 2.3.1 version. After downloading the file extract the zip folder inside the webapps folder in the tomcat installation directory.</p>
+<p>Once we are done installing Sencha CMD and Sencha Touch, we can generate a sencha application. The Sencha app can be generated only if you are inside the touch folder of tomcat.
+          The following syntax is used for generating a Sencha Touch application
+          sencha generate app appname <directory_of_appname>
+          eg. sencha generate app firstapp ..firstapp 
+          This generates a Sencha application name firstapp inside a folder also name firstapp inside                     webapps.</p>
+
+<h3>Running on Browser</h3>
+<p>Once the sencha application is ready, download Phonegap. Before installing phonegap, it is                    necessary to install node.js. It can be downloading from the following link. Once node.js is                   installed you can install phonegap from the following link. At the time of my writing, PhoneGap            2.9.1 was the latest version.</p>
+<h3>Running on Android</h3>
+<p>Now from the command prompt, go to phonegap<version>/lib/android/bin and type the following          command
+       create <path/to/directory>  packagename appname
+       eg. create  /path_to_firstapp/firstapp/build/android hello.test.firstapp firstapp.</p>
+      
+<p> After running this command you will see that a folder android is created inside build folder of your         firstapp. </p>
+
+  <p>  Once the application is up running on the browser, you need to package it. Simply go inside the             firstapp folder and type the following command
+
+        sencha app build package.
+        This will package all your javascript files inside a single app.js file.</p>
+
+ <p> Now go inside your firstapp directory and go to build/android and type the following command
+      ant debug. This will build your android application.</p>
+
+ <p> Next type the following command
+     adb install -r ./bin/firstapp-debug.apk
+    This will produce a apk file named firstapp on your corresponding device.</p>
+
+
+
+</div>
